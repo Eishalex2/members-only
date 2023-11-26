@@ -1,0 +1,13 @@
+<header>
+  <h1>Members Only</h1>
+  <nav>
+    <% if (user) { %>
+      <p>Welcome, <%= user.username %></p>
+      <p>Status: <%= user.status %></p>
+      <a class="logout" href="/user/logout">Log out</a>
+    <% } else { %>
+      <a class="login-btn" href="/user/login">Log in</a>
+      <a class="signup-btn" href="/user/signup">Sign up</a>
+    <% } %>
+  </nav>
+</header>

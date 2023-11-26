@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <title>New Message</title>
+</head>
+<body>
+  <header>
+    <h1>Members Only</h1>
+    <a href="/" class="home">Home</a>
+  </header>
+
+  <% if (user) { %>
+    <h2>Create a new message, <%= user.username %></h2>
+
+    <form action="" method="POST" class="create-message">
+      <div class="form-group">
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" value="<%= message ===
+        false ? '' : message.title %>">
+      </div>
+      <div class="form-group">
+        <label for="content">Message: </label>
+        <textarea name="content" id="content" cols="30" rows="10"><%=
+        message === false ? '' : message.content %></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  
+    <% if (errors) { %>
+      <ul>
+        <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  <% } else { %>
+    Log in or Sign up to create a message!
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <title>Login</title>
+</head>
+<body>
+  <header>
+    <h1>Members Only</h1>
+    <a href="/" class="home">Home</a>
+  </header>
+
+  <h2>Please log in</h2>
+
+  <form action="" method="POST" class="login">
+    <div class="form-group">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password">
+    </div>
+
+    <button type="submit">Log In</button>
+  </form>
+
+  <% if (errors) { %>
+    <ul>
+      <% errors.forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>

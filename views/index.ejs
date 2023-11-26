@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <title>Homepage</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <%- include('./header.ejs') %>
+    
+    <div class="user-links">
+      <% if (user) { %>
+        <h2>What do you want to do?</h2>
+        <div class="options">
+          <a href="/message/create" class="create">Create a new message</a>
+          <% if (user.status === "user") { %>
+            <a href="/user/member-test" class="membertest">Become a member</a>
+            <a href="/user/admin-test" class="admintest">Become an admin</a>
+          <% } %>
+          <% if (user.status === "member") { %>
+            <a href="/user/admin-test" class="admintest">Become an admin</a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+
+    <div class="messages-container">
+      <h3>Messages</h3>
+      <% if (messages.length) { %>
+        <% messages.forEach(message => { %>
+          <div class="message">
+            <div class="line-1">
+              <h3 class="title"><%= message.title %></h3>
+              <% if (user && user.status === "admin") { %>
+                <form action="/message/delete" method="POST" class="delete">
+                  <div class="form-group">
+                    <input type="hidden" name="messageid"
+                    required="true" value=<%= message._id %>>
+                    <button type="submit" class="trash" ><img
+                    src="/images/trash-2.svg" alt="Trash icon"></button>
+                  </div>
+                </form>
+              <% } %>
+            </div>
+            <p class="content"><%= message.content %></p>
+            <div class="line-3">
+              <% if (user && user.status !== "user") { %>
+                <p class="author">Author: <%= message.author.username %></p>
+                <p class="timestamp">Time posted: <%= message.timestamp_formatted %></p>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <h3>Nothing to see here yet...</h3>
+      <% } %>
+    </div>
   </body>
 </html>

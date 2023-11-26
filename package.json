@@ -5,14 +5,28 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "serverstart": "SET DEBUG=express-locallibrary-tutorial:* npm run dev"
+    "watch": "nodemon --ext js,ejs --ignore public",
+    "serverstart": "SET DEBUG=members-only:* & npm run dev"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "luxon": "^3.4.4",
+    "mongoose": "^8.0.1",
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3"
   }
 }

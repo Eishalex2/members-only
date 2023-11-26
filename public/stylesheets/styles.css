@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  gap: 5px;
+  font-size: 1.5rem;
+}
+
+header {
+  margin-bottom: min(20px);
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout a {
+  color: white;
+}
+
+header .home,
+.logout,
+.login-btn,
+.signup-btn {
+  font-size: 1.2rem;
+  background-color: #9fa6b2;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 120px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+h3 {
+  text-align: center;
+}
+
+header .home:hover,
+.logout:hover,
+.login-btn:hover,
+.signup-btn:hover {
+  cursor: pointer;
+  background-color: #7f848e;
+}
+
+.create,
+.membertest,
+.admintest {
+  font-size: 1.2rem;
+  border-radius: 10px;
+  height: 50px;
+  width: 140px;
+  text-align: center;
+  padding: 2px 4px;
+}
+
+.create:hover,
+.membertest:hover,
+.admintest:hover {
+  cursor: pointer;
+}
+
+.create,
+.signup-btn {
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.create:hover,
+.signup-btn:hover {
+  background-color: #208537;
+}
+
+.membertest {
+  background-color: #17a2b8;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.membertest:hover {
+  background-color: #128193;
+}
+
+.admintest {
+  background-color: #343a40;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.admintest:hover {
+  background-color: #5c6166;
+}
+
+a {
+  text-decoration: none;
+}
+
+.messages-container {
+  width: clamp(250px, 25vw, 500px);
+  background-color: lightcyan;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  border: 1px solid black;
+  padding: 8px;
+  display: grid;
+}
+
+.line-1, 
+.line-3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.line-1 {
+  margin-bottom: 5px;
+  font-family: sans-serif;
+}
+
+.content {
+  font-size: 1.2rem;
+}
+
+.line-3 {
+  margin-top: 10px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.signup,
+.login,
+.member,
+.admin,
+.create-message {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1.2rem;
+}
+
+.form-group input {
+  line-height: 1.5rem;
+  padding: 3px 8px;
+  width: 250px;
+}
+
+form button {
+  margin: 10px 0;
+  height: 60px;
+  width: 150px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  align-self: center;
+  background-color:	#007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0062cc;
+  cursor: pointer;
+}
+
+.trash {
+  all: initial;
+  transition: background-color 0.3s;
+}
+
+.trash:hover {
+  all: initial;
+  background-color: #9fa6b2;
+  cursor: pointer;
+}

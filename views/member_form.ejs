@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <title>Membership Test</title>
+</head>
+<body>
+  <header>
+    <h1>Members Only</h1>
+    <a href="/" class="home">Home</a>
+  </header>
+
+  <h2>Become a Member!</h2>
+
+  <% if (!user) { %>
+    <h2>Uh oh! Looks like you're not logged in!</h2>
+    <p>Please login or sign up first before taking the test to become a member.</p>
+  <% } else { %>
+    <form action="" method="POST" class="member">
+      <div class="form-group">
+        <label for="passcode">Enter member code: </label>
+        <input type="text" name="passcode" id="passcode">
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  <% } %>
+
+  <% if (errors) { %>
+    <ul>
+      <% errors.forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+</body>
+</html>
